@@ -12,20 +12,20 @@ async function main(){
             names.push(pessoa.name)
         }
         console.timeEnd('for')
-
+//--------------------------------------------------------------------------------------
          console.time('for-in')
         for(let i in result.results){
             const pessoa = result.results[i]
             names.push(pessoa.name)
         }
          console.timeEnd('for-in')
-
+//--------------------------------------------------------------------------------------
           console.time('for-of')
         for(pessoa of result.results){
             names.push(pessoa.name)
         }
           console.timeEnd('for-of')
-
+//--------------------------------------------------------------------------------------
         console.log('Names: ',names )
     }catch(error){
 
