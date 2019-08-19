@@ -1,0 +1,20 @@
+{
+  "name": "NodeBR",
+  "version": "1.0.0",
+  "description": "Códigos que fiz durante o aprendizado de NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cristuker/aulas-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cristuker/aulas-nodejs/issues"
+  },
+  "homepage": "https://github.com/Cristuker/aulas-nodejs#readme"
+}
