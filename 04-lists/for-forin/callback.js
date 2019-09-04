@@ -1,7 +1,11 @@
 function mostrarNome(callback){
-    setTimeout(()=>{
+   /* setTimeout(()=>{
       callback('Cristian',20)
-    },2000)
+    },2000)*/
+
+    return new Promise(() =>{
+      return ('Cristian',20)
+    })
 }
 
 module.exports = mostrarNome
