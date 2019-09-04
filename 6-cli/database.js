@@ -63,14 +63,14 @@ class Database{
            return await this.escreverArquivo([])
         }
 
-        const dados = this.obterDadosArquivo()
+        const dados = await this.obterDadosArquivo()
         const indice = dados.findIndex(item => item.id === parseInt(id))
-        if(!indice){
+        if(indice === -1){
             throw Error('O usuario não existe')
         }
-
-        return false
-    }
+        dados.splice(indice,1)
+        return await this.escreverArquivo(dados)
+    } 
 }
 
 module.exports = new Database()
