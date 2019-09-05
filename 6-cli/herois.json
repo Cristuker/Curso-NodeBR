@@ -1,30 +1,5 @@
-{
-    "0": {
-        "id": 1,
-        "nome": "Flash",
-        "poder": "Speed"
-    },
-    "1": {
-        "id": 1,
-        "nome": "Flash",
-        "poder": "Speed"
-    },
-    "2": {
-        "id": 1,
-        "nome": "Flash",
-        "poder": "Speed"
-    },
-    "3": {
-        "id": 1,
-        "nome": "Flash",
-        "poder": "Speed"
-    },
-    "4": {
-        "id": 1,
-        "nome": "Flash",
-        "poder": "Speed"
-    },
-    "objetoAtualizado": {
+[
+    {
         "0": {
             "id": 1,
             "nome": "Flash",
@@ -46,16 +21,13 @@
             "poder": "Speed"
         },
         "4": {
-            "id": 2,
-            "nome": "Lanterna Verde",
-            "poder": "Energia do Anel"
-        },
-        "5": {
             "id": 1,
             "nome": "Flash",
             "poder": "Speed"
-        },
-        "nome": "Batman",
-        "poder": "Dinheiro"
+        }
+    },
+    {
+        "nome": "Cristian",
+        "poder": "Gato"
     }
-}
+]
