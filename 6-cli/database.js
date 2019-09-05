@@ -46,8 +46,8 @@ class Database{
     async listar(id){
         const dados = await this.obterArquivo();
         // se nao passar o id, traz tudo
-
-        if(id){
+        console.log(id)
+        if(id !== true){
             return dados.filter(item => (id ? item.id == id : true));
         }
         return dados
