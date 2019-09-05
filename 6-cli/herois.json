@@ -1,33 +1,27 @@
 [
     {
-        "0": {
-            "id": 1,
-            "nome": "Flash",
-            "poder": "Speed"
+        "nome":"Aquaman",
+        "poder":"Marinho",
+        "id":1567696295456
         },
-        "1": {
-            "id": 1,
-            "nome": "Flash",
-            "poder": "Speed"
-        },
-        "2": {
-            "id": 1,
-            "nome": "Flash",
-            "poder": "Speed"
-        },
-        "3": {
-            "id": 1,
-            "nome": "Flash",
-            "poder": "Speed"
-        },
-        "4": {
-            "id": 1,
-            "nome": "Flash",
-            "poder": "Speed"
-        }
-    },
-    {
-        "nome": "Cristian",
-        "poder": "Gato"
-    }
-]
+        {
+            "nome":"Flash",
+            "poder":"Speed",
+            "id":1567696581559
+            },
+            {
+                "nome":"Lanterna-Verde",
+                "poder":"Poder",
+                "id":1567696729944
+                },
+                {
+                    "nome":"Batman",
+                    "poder":"ricão",
+                    "id":2
+                    },
+                    {
+                        "nome":"Robin",
+                        "poder":"Amigo do batman",
+                        "id":1
+                        }
+            ]
