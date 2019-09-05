@@ -47,7 +47,7 @@ class Database{
         const dados = await this.obterArquivo();
         // se nao passar o id, traz tudo
 
-        if(!id){
+        if(id){
             return dados.filter(item => (id ? item.id == id : true));
         }
         return dados
