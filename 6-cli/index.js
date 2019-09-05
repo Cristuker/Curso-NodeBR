@@ -29,11 +29,9 @@ async function main(){
             }
 
             if(commander.listar){
-                
                 const id = commander.listar;
                 const result = await Database.listar(id);
                 console.log(result);
-                console.log('id',id)
                 return;
             }
             

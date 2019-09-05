@@ -16,10 +16,11 @@ const writeFileAsync = promisify(writeFile);
 class Database{
 
     constructor(){
-        this.NOME_ARQUIVO = 'herois.json';
+        this.NOME_ARQUIVO = 'herois.json'
+       //his.NOME_ARQUIVO = 'heroes.json'
     }
 
-    async obterDadosArquivo(){
+    async obterArquivo(){
 
         const arquivo = await readFileAsync(this.NOME_ARQUIVO,'utf8');
         
@@ -32,68 +33,61 @@ class Database{
     }
 
     async cadastrar(heroi){
-        const dados = await this.obterDadosArquivo();
+        const dados = await this.obterArquivo();
         const id = heroi.id <= 2 ? heroi.id : Date.now();
-
         const heroiComId = {
-            id,
-            ...heroi
-        }
+      ...heroi,
+      id,
+    };
 
-        const dadosFinal = [
-            ...dados,
-            heroiComId
-        ]
-
-        const resultado = await this.escreverArquivo(dadosFinal);
-
-        return resultado;
+    return await this.escreverArquivo([...dados, heroiComId]);
     }
 
     async listar(id){
-        const dados = await this.obterDadosArquivo();
+        const dados = await this.obterArquivo();
+        // se nao passar o id, traz tudo
+
+        if(!id){
+            return dados.filter(item => (id ? item.id == id : true));
+        }
+        return dados
         
-        const dadosFiltrados = dados.filter(item => (id ? ( item.id === id ): true ))
-        
-        return dadosFiltrados;
+    }
+
+    async atualizar(id,atualizacoes){
+        const dados = await this.obterArquivo();
+        const indice = dados.findIndex(item => item.id === parseInt(id));
+        if (indice === -1) {
+            throw Error('heroi não existe!');
+        }
+
+        const atual = dados[indice];
+        dados.splice(indice, 1);
+
+        //workaround para remover valores undefined do objeto
+        const objAtualizado = JSON.parse(JSON.stringify(atualizacoes));
+        const dadoAtualizado = Object.assign({}, atual, objAtualizado);
+
+        return await this.escreverArquivo([...dados, dadoAtualizado]);
     }
 
     async remover(id){
         if(!id){
-           return await this.escreverArquivo([])
+            await this.escreverArquivo([])
+            return true;
         }
 
-        const dados = await this.obterDadosArquivo()
-        const indice = dados.findIndex(item => item.id === parseInt(id))
-        if(indice === -1){
-            throw Error('O usuario não existe')
-        }
-        dados.splice(indice,1)
-        return await this.escreverArquivo(dados)
-    } 
-
-    async atualizar(id,modificacoes){
-        const dados = await this.obterDadosArquivo()
-        const indice = dados.findIndex(item => item.id === parseInt(id))
-        if(indice === -1){
-            throw Error('O heroi informado não existe')
-        }
-
-        const atual = dados[indice]
-        const objetoAtualizado = {
-            ...dados,
-            ...modificacoes
-        }
-
-        dados.splice(indice,1)
+        const dados = await this.obterArquivo()
         
-        return await this.escreverArquivo({
-            ...dados,
-            objetoAtualizado
-        })
-
-
-    }
+        const indice = dados.findIndex(item => item.id === parseInt(id))
+        if(indice === -1){
+            throw Error('O heroi não existe')
+        }
+        
+        dados.splice(indice, 1);
+        await this.escreverArquivo(dados);
+        return true;
+    } 
 }
 
 module.exports = new Database()
