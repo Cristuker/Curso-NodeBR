@@ -1,0 +1,1 @@
+docker ps => processos que estão rodando na máquina
