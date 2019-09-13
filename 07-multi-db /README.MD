@@ -37,10 +37,10 @@ sudo docker run \
 
 sudo docker run \
     --name mongoclient \
-    -p 3030:3030 \
+    -p 3000:3000 \
     --link mongodb:mongodb \
     -d \
-    mongoclient/mongoclient 
+    mongoclient/mongoclient
 
 
     sudo docker start postgres adminer mongodb mongoclient
