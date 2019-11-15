@@ -16,7 +16,7 @@ console.log(existe)
 
  let dono ={
      nome: 'Cristian',
-     status: 'rico pra caralho'
+     status: 'rico'
  }
 
  let motorista ={
