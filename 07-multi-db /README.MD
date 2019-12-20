@@ -18,7 +18,12 @@ sudo docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admi
 
 ### cliente para o mongodb
 
-sudo docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoclient/mongoclient
-
+sudo docker run --name mongoclient -p 3005:3005 --link mongodb:mongodb -d mongoclient/mongoclient // n funciona
+//
+docker run --name mongoclient -p 3000:3000 -d -e MONGO_URL=mongodb://admin:senhaadmin@mongodb:27017/admin --link mongodb:mongodb mongoclient/mongoclient
 
     sudo docker start postgres adminer mongodb mongoclient
+
+### Deletar e para os containers
+    docker rm -f $(docker ps -a -q)
+ // salva vidas
