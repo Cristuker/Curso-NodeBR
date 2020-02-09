@@ -35,3 +35,9 @@
  ### Criar user para acessa o bd
 
  docker exec -it mongodb mongo --host localhost -u admin -p senhaadmin --authenticationDatabase admin --eval "db.getSiblingDB('herois').createUser({user:'cristuker',pwd:'136crcc12',roles:[{role:'readWrite',db:'herois'}]})"
+
+ ### Mongo comandos
+//docker exec -it 268661efb07e mongo -u cristuker -p 136crcc12 --authenticationDatabase herois
+//show dbs -> todos os bancos q pode usar
+//use herois -> mudando contexto database herois
+//show collections -> pra visualizar as tabelas

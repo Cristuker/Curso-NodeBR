@@ -3,8 +3,8 @@
 //use herois -> mudando contexto database herois
 //show collections -> pra visualizar as tabelas
 db.herois.insert({
-    nome: 'Flash',
-    poder: 'Velocidade',
+    nome: 'Batman',
+    poder: 'DInheiro',
     dataNascimento: '1998-01-01'
 })
 
