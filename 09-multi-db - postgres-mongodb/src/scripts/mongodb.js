@@ -1,4 +1,4 @@
-//docker exec -it 268661efb07e mongo -u cristuker -p 136crcc12 --authenticationDatabase herois
+//docker exec -it 268661efb07e mongo -u cristuker -p 136crcc12 --authenticationDatabase herois 
 //show dbs -> todos os bancos q pode usar
 //use herois -> mudando contexto database herois
 //show collections -> pra visualizar as tabelas

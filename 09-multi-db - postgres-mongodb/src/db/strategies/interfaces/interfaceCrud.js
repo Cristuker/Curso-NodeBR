@@ -28,6 +28,10 @@ class ICrud{
     throw new notImplementedException();
   }
 
+  connect(){
+    throw new notImplementedException();
+  }
+
 }
 
 
