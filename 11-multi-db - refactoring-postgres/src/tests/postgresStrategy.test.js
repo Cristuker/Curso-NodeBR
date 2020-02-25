@@ -22,7 +22,9 @@ describe('Postgres Strategy', function () {
 	this.beforeAll(async () => {
 
 		const connection = await Postgres.connect();
+		
 		const model = await Postgres.defineModel(connection, HeroiSchema);
+
 		context = new Context(new Postgres(connection, model));
 
 		await context.delete();
