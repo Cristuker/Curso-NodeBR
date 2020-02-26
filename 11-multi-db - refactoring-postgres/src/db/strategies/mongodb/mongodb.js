@@ -13,12 +13,12 @@ class MongoDB extends ICrud {
 
     constructor(connection, schema) {
         super()
-        this.schema = schema;
-        this.connection = connection;
+        this._schema = schema;
+        this._connection = connection;
     }
 
     async isConneted() {
-        const state = STATUS[this.connection.readyState]
+        const state = STATUS[this._connection.readyState]
         
         if(state === 'Conectado') return state;
 
@@ -26,7 +26,7 @@ class MongoDB extends ICrud {
 
         await new Promise(resolve => setTimeout(resolve,1000))
 
-        return STATUS[this.connection.readyState]
+        return STATUS[this._connection.readyState]
     }
 
     static connect() {
@@ -46,20 +46,20 @@ class MongoDB extends ICrud {
     }
 
     async create(novoHeroi) {
-        return this.schema.create(novoHeroi);
+        return this._schema.create(novoHeroi);
 
     }
 
     read(item, skip = 0, limit = 10){
-        return this.schema.find(item).skip(skip).limit(limit);
+        return this._schema.find(item).skip(skip).limit(limit);
     }
 
     update(id, payload){
-        return this.schema.updateOne({_id: id},{$set: payload});
+        return this._schema.updateOne({_id: id},{$set: payload});
     }
 
     delete(id){
-        return this.schema.deleteOne({_id: id});
+        return this._schema.deleteOne({_id: id});
     }
 
 }
