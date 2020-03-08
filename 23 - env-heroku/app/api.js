@@ -20,13 +20,13 @@ const Vision = require('vision');
 const Inert = require('inert');
 const HapiJWT = require('hapi-auth-jwt2');
 
-const Context = require('./db/strategies/base/contextStrategy');
-const MongoDB = require('./db/strategies/mongodb/mongodb');
-const HeroiSchema = require('./db/strategies/mongodb/schemas/heroisSchema');
-const HeroRoute = require('./routes/heroRoutes');
-const AuthRoute = require('./routes/authRoutes');
-const Postgres = require('./db/strategies/postgres/postgres');
-const UserSchema = require('./db/strategies/postgres/schemas/userSchema');
+const Context = require('../db/strategies/base/contextStrategy');
+const MongoDB = require('../db/strategies/mongodb/mongodb');
+const HeroiSchema = require('../db/strategies/mongodb/schemas/heroisSchema');
+const HeroRoute = require('../routes/heroRoutes');
+const AuthRoute = require('../routes/authRoutes');
+const Postgres = require('../db/strategies/postgres/postgres');
+const UserSchema = require('../db/strategies/postgres/schemas/userSchema');
 
 
 const JWT_SECRET = process.env.JWT_KEY;
