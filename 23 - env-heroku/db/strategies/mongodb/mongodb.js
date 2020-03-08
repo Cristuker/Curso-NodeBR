@@ -29,7 +29,7 @@ class MongoDB extends ICrud {
 
     static connect() {
 
-        Mongoose.connect(process.env.MONGODB_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error) => {
+        Mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: false }, (error) => {
             //Sometimes mongoose say to use { useUnifiedTopology: true }, but this option broken the connection
             
             if (error) {
