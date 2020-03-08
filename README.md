@@ -7,10 +7,10 @@ Uma API que trabalha com multiplo bancos de dados (Mongo DB e Postgres), usando 
 
 ### Como executar
 
-* Instale todas as depedencias
+* Instale todas as depedencias <br>
     ``` npm i ```
 
-* Acesse a pasta 23 - env - heroku e execute
+* Acesse a pasta 23 - env - heroku e execute <br>
     ``` npm run prod ```
 
 Documentação está na pasta 23 - env - heroku na url(Swagger): 
