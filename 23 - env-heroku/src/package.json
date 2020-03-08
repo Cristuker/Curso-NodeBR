@@ -4,7 +4,7 @@
   "description": "sudo docker start postgres adminer mongodb mongoclient",
   "main": "api.js",
   "scripts": {
-    "start":"cd src && node api.js",
+    "start":"cd src/ && node api.js",
     "test": "mocha src/tests/*.js ",
     "test:watch": "mocha --timeout 10000 src/tests/*.js -w ",
     "test:prod": "cross-env NODE_ENV=prod npm t",
